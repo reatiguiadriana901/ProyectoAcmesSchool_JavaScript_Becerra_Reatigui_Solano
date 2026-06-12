@@ -1,0 +1,124 @@
+:root{
+    --color:rgb(63, 63, 253);
+    --black:black;
+    --white:white;
+    --fondo:#b6c3fb;
+    --gris:#555;
+}
+
+
+body{
+    margin: 0;
+}
+
+.general{
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    ;
+
+    grid-template-rows: 80px auto;
+    min-width: 100vw; 
+    min-height: 100vh;
+}
+
+
+.header{
+    grid-area: header;
+    background-color: black;
+
+}
+
+.header_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100%;
+
+}
+
+.header_brand{
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+}
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    background-color:var(--color) ;
+    padding: 0.7rem;
+    color: var(--white);
+    border: 1px solid ;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
+.header_title-group{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.header_school-name{
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.header_platform-type{
+    font-size: 0.5rem;
+}
+
+.navbar_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.navbar_link_resolve {
+    background-color: var(--color);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    text-decoration: none;
+    text-align: center;
+    width: fit-content; 
+    margin-bottom: 0.2rem;
+}
+
+
+.navbar_link_login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: var(--black);
+}
+
+
+.header_acces{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acces{
+    font-size: 0.7rem;
+}
+
+.info-examenes{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.formularios{
+    background-color: #cdcdcdb7;
+}

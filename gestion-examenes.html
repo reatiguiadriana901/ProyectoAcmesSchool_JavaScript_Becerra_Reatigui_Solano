@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="gestion-examenes.css">
+</head>
+<body class="general">
+    <header class="header">
+        <div class="header_container">
+            <div class="header_brand">
+                <div class="header_logo">
+                    <span class="logo">A</span>
+                </div>
+                <div class="header_title-group">
+                    <span class="header_school-name">Acme School</span>
+                    <span class="header_platform-type">Exams platform</span>
+                </div>
+            </div>
+
+            <nav class="navbar_menu">
+                <a href="#/resolver" class="navbar_link_resolve">Resolver examen</a>
+                <a href="#/login" class="navbar_link_login">Login</a>
+            </nav>
+
+            <div class="header_acces">
+                <p class="acces">Acceso publico</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <p>Biblioteca de Pruebas</p>
+        <h1>Gestion De Examenes</h1>
+        <h3>Configura examenes, preguntas y respuestas. Cada pregunta admite solo una respuesta correcta</h3>
+
+        <section class="info-examenes">
+            <section class="formularios">
+                <h4>Crear examen</h4>
+                <div>
+                    <strong>Codigo</strong>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <strong>Titulo</strong>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: JS quiz" required>
+                </div>
+                <div>
+                    <strong>Tiempo en minutos</strong>
+                    <input type="number" id="nombre" name="nombre" placeholder="Ej: 10" required>
+                </div>
+                <div>
+                    <strong>Porcebtaje de Aprobacion</strong>
+                    <input type="number" id="nombre" name="nombre" placeholder="Ej: 70" required>
+                </div>
+                <div>
+                    <strong>Descripcion</strong>
+                    <input type="number" id="nombre" name="nombre" required>
+                </div>
+            </section>
+            <section>
+                <strong>Preguntas</strong>
+
+                <button>Agregar pregunta</button>
+            </section>
+            <section>
+                <div>
+                    <strong>Examenes registrados</strong>
+                    <div>
+                        registros
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+    <script src=""></script>
+</body>
+</html>
