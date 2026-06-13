@@ -11,7 +11,7 @@ const examenes = [
                 respuestas: [
                     { texto: "let", esCorrecta: false },
                     { texto: "const", esCorrecta: true },
-                    { texto: "var", esCorrecta: false}
+                    { texto: "var", esCorrecta: false },
                 ]
             },
 
