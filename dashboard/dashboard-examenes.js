@@ -64,8 +64,11 @@ examenes.forEach((examen) => {
         </div>
     </article>
 `
+    const boton = nuevaTarjeta.querySelector('.btn-presentar')
+    boton.addEventListener('click', () => {
+        localStorage.setItem('examenSeleccionado', JSON.stringify(examen))
 
-document.querySelector('.catalogo_grid').appendChild(nuevaTarjeta)
-
-   
+        window.location.href = '../registro_examen/registro.html'
+    })
+    document.querySelector('.catalogo_grid').appendChild(nuevaTarjeta)
 })
