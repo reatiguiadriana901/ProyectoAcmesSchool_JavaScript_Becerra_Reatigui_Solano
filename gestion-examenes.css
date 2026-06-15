@@ -26,7 +26,7 @@ body{
 
 .header{
     grid-area: header;
-    background-color: black;
+    background-color: white;
 
 }
 
@@ -114,11 +114,73 @@ body{
     font-size: 0.7rem;
 }
 
-.info-examenes{
-    display: grid;
-    grid-template-columns: auto auto;
+.formularios{
+    background-color: #ffffffe0;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
 }
 
-.formularios{
-    background-color: #cdcdcdb7;
+.formularios div{
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.formularios input{
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.formularios input:focus {
+    outline: none;
+}
+
+.formularios textarea{
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.formularios textarea:focus {
+    outline: none;
+}
+
+
+body{
+  background-color: var(--fondo);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulos{
+  margin: 0.5rem;
+}
+
+.info-examenes{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.parte_inferior_form {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.parte_inferior_form button{
+  border-radius: 5px;
+  padding: 6px;
+  border: 1.5px solid #0004ff;
+  background-color: #5582ff;
+  transition: all 0.3s ease;
+}
+
+.parte_inferior_form button:hover{
+    box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
+    background-color: rgb(57, 93, 255);
+    transform: scale(1.05);
 }

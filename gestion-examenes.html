@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>document</title>
     <link rel="stylesheet" href="gestion-examenes.css">
 </head>
@@ -31,38 +33,44 @@
     </header>
 
     <main class="main">
-        <p>Biblioteca de Pruebas</p>
+      <div class="titulos">
+        <strong>Biblioteca de Pruebas</strong>
         <h1>Gestion De Examenes</h1>
-        <h3>Configura examenes, preguntas y respuestas. Cada pregunta admite solo una respuesta correcta</h3>
+        <p>Configura examenes, preguntas y respuestas. Cada pregunta admite solo una respuesta correcta</p>
+      </div>
 
         <section class="info-examenes">
             <section class="formularios">
-                <h4>Crear examen</h4>
+                <h3>Crear examen</h3>
                 <div>
                     <strong>Codigo</strong>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="codigo" name="codigo" required>
                 </div>
                 <div>
                     <strong>Titulo</strong>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej: JS quiz" required>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ej: JS quiz" required>
                 </div>
                 <div>
                     <strong>Tiempo en minutos</strong>
-                    <input type="number" id="nombre" name="nombre" placeholder="Ej: 10" required>
+                    <input type="number" id="tiempo" name="tiempo" placeholder="Ej: 10" required>
                 </div>
                 <div>
                     <strong>Porcebtaje de Aprobacion</strong>
-                    <input type="number" id="nombre" name="nombre" placeholder="Ej: 70" required>
+                    <input type="number" id="aprobacion" name="aprobacion" placeholder="Ej: 70" required>
                 </div>
                 <div>
                     <strong>Descripcion</strong>
-                    <input type="number" id="nombre" name="nombre" required>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
                 </div>
-            </section>
-            <section>
-                <strong>Preguntas</strong>
 
-                <button>Agregar pregunta</button>
+                <div class="parte_inferior_form">
+                  <p><strong>Preguntas</strong></p>
+                  <button>Agregar pregunta</button>
+                </div>
+
+                <div id="examenPregunta">
+
+                </div>
             </section>
             <section>
                 <div>
@@ -70,6 +78,27 @@
                     <div>
                         registros
                     </div>
+
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Examen</th>
+                            <th>Tiempo</th>
+                            <th>Aprobacion</th>
+                            <th>Preguntas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </div>
             </section>
         </section>
