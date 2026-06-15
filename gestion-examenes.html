@@ -1,135 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acme School — Gestión de exámenes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/dashboard.css" />
-  <link rel="stylesheet" href="gestion-examenes.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="gestion-examenes.css">
 </head>
-<body>
+<body class="general">
+    <header class="header">
+        <div class="header_container">
+            <div class="header_brand">
+                <div class="header_logo">
+                    <span class="logo">A</span>
+                </div>
+                <div class="header_title-group">
+                    <span class="header_school-name">Acme School</span>
+                    <span class="header_platform-type">Exams platform</span>
+                </div>
+            </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-brand">
-      <div class="brand-logo">A</div>
-      <span>Acme School</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="pages/usuarios.html" class="nav-link">Usuarios</a></li>
-      <li><a href="gestion-examenes.html" class="nav-link active">Exámenes</a></li>
-    </ul>
-    <div class="nav-user">
-      <span class="nav-user-name" id="navUserName">—</span>
-      <button class="btn btn-outline btn-sm" id="logoutBtn">Cerrar sesión</button>
-    </div>
-  </nav>
+            <nav class="navbar_menu">
+                <a href="#/resolver" class="navbar_link_resolve">Resolver examen</a>
+                <a href="#/login" class="navbar_link_login">Login</a>
+            </nav>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="main-content">
-    <div class="page-header">
-      <div>
-        <h1>Gestión de exámenes</h1>
-        <p class="page-subtitle">Configura exámenes, preguntas y respuestas. Cada pregunta admite solo una respuesta correcta.</p>
-      </div>
-      <button class="btn btn-primary" id="btnNuevoExamen">+ Nuevo examen</button>
-    </div>
-
-    <!-- TABLA DE EXÁMENES -->
-    <div class="card">
-      <div class="card-header">
-        <h2>Exámenes registrados</h2>
-        <input type="search" class="search-input" id="searchExamenes" placeholder="Buscar por título o código…" />
-      </div>
-      <div class="table-wrapper">
-        <table class="data-table" id="tablaExamenes">
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Título</th>
-              <th>Tiempo</th>
-              <th>Aprobación</th>
-              <th>Preguntas</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tbodyExamenes">
-            <!-- Filas generadas por JS -->
-          </tbody>
-        </table>
-        <div class="empty-state" id="emptyExamenes" style="display:none">
-          <p>No hay exámenes registrados todavía.</p>
+            <div class="header_acces">
+                <p class="acces">Acceso publico</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </main>
+    </header>
 
-  <!-- MODAL: Crear / Editar examen -->
-  <div class="modal-overlay" id="modalExamen" role="dialog" aria-modal="true" aria-labelledby="modalExamenTitle" style="display:none">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 id="modalExamenTitle">Nuevo examen</h3>
-        <button class="modal-close" id="modalExamenClose" aria-label="Cerrar">✕</button>
-      </div>
+    <main class="main">
+        <p>Biblioteca de Pruebas</p>
+        <h1>Gestion De Examenes</h1>
+        <h3>Configura examenes, preguntas y respuestas. Cada pregunta admite solo una respuesta correcta</h3>
 
-      <form class="modal-form" id="formExamen" novalidate>
-        <input type="hidden" id="examenId" />
+        <section class="info-examenes">
+            <section class="formularios">
+                <h4>Crear examen</h4>
+                <div>
+                    <strong>Codigo</strong>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <strong>Titulo</strong>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: JS quiz" required>
+                </div>
+                <div>
+                    <strong>Tiempo en minutos</strong>
+                    <input type="number" id="nombre" name="nombre" placeholder="Ej: 10" required>
+                </div>
+                <div>
+                    <strong>Porcebtaje de Aprobacion</strong>
+                    <input type="number" id="nombre" name="nombre" placeholder="Ej: 70" required>
+                </div>
+                <div>
+                    <strong>Descripcion</strong>
+                    <input type="number" id="nombre" name="nombre" required>
+                </div>
+            </section>
+            <section>
+                <strong>Preguntas</strong>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="examenCodigo">Código *</label>
-            <input type="text" id="examenCodigo" placeholder="Ej: JS-101" required />
-            <span class="field-error" id="errCodigo"></span>
-          </div>
-          <div class="form-group">
-            <label for="examenTiempo">Tiempo (min) *</label>
-            <input type="number" id="examenTiempo" placeholder="Ej: 30" min="1" required />
-            <span class="field-error" id="errTiempo"></span>
-          </div>
-        </div>
+                <button>Agregar pregunta</button>
+            </section>
+            <section>
+                <div>
+                    <strong>Examenes registrados</strong>
+                    <div>
+                        registros
+                    </div>
+                </div>
+            </section>
+        </section>
 
-        <div class="form-group">
-          <label for="examenTitulo">Título *</label>
-          <input type="text" id="examenTitulo" placeholder="Ej: Fundamentos de JavaScript" required />
-          <span class="field-error" id="errTitulo"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="examenAprobacion">Porcentaje de aprobación (%) *</label>
-          <input type="number" id="examenAprobacion" placeholder="Ej: 70" min="1" max="100" required />
-          <span class="field-error" id="errAprobacion"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="examenDescripcion">Descripción</label>
-          <textarea id="examenDescripcion" rows="3" placeholder="Describe el contenido del examen…"></textarea>
-        </div>
-
-        <!-- Sección de preguntas -->
-        <div class="preguntas-section">
-          <div class="preguntas-header">
-            <span class="preguntas-label">Preguntas</span>
-            <button type="button" class="btn btn-outline btn-sm" id="btnAgregarPregunta">+ Agregar pregunta</button>
-          </div>
-          <div id="listPreguntas" class="list-preguntas">
-            <!-- Preguntas generadas por JS -->
-          </div>
-        </div>
-
-        <div class="modal-actions">
-          <button type="button" class="btn btn-ghost" id="btnCancelarExamen">Cancelar</button>
-          <button type="submit" class="btn btn-primary" id="btnGuardarExamen">Guardar examen</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- TOAST -->
-  <div class="toast" id="toast"></div>
-
-  <script src="dashboard-examenes.js"></script>
+    </main>
+    <script src=""></script>
 </body>
 </html>
