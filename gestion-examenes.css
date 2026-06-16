@@ -378,8 +378,137 @@ body{
 /* TABLET MEDIDAS */
 @media (min-width: 768px){
 
+    .tabla-scroll {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .examenes-registrados table {
+        font-size: 20px;
+    }  
+
+    .titulos{
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 2rem;
+    }   
 
 
+    .accionesBotones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .examenes-registrados{
+        background-color: #ffffffe0;
+        margin: 0.5rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
+        min-width: 0;
+    }
+
+    .formulario-crear-examen{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+    }
+
+    .formularios{
+        padding: 1.5rem;
+    }
+
+    .formularios input{
+        font-size: 14px;
+        padding: 0.3rem;
+    }
+
+    .formulario-crear-examen input:focus {
+        outline: none;
+        box-shadow:  0 0 15px 3px rgba(182, 195, 251, 0.726);
+    }
+
+    .btn-borrar{
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-borrar:hover {
+        background-color: #ff1a1a;
+    }
+
+    .btn-editar{
+        background-color: #4c87af;
+        color: white;
+        font-size: 15px;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-editar:hover {
+        background-color: #4c6baf;
+    }
+
+    #examenPregunta label{
+        display: flex;
+        margin-top: 13px;
+    }
+    
+    #examenPregunta label input{
+        font-size: 15px;
+    }
+
+    .navbar_menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    #examenPregunta div #agregar{
+        margin: 10px;
+        padding: 4px 8px;
+        color: var(--fondo);
+        border-radius: 5px;
+        border: 1px solid #b1b1b1f0;
+        transition: all 0.3s ease;
+         cursor: pointer;
+    }
+    
+    #examenPregunta div #agregar:hover{
+        transform: scale(1.07);
+        background-color: var(--fondo);
+        color: white;
+    }
+    
+    #examenPregunta div #limpiar{
+        margin: 10px;
+        padding: 4px 8px;
+        color: var(--fondo);
+        border-radius: 5px;
+        border: 1px solid #b1b1b1f0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    #examenPregunta div #limpiar:hover{
+        transform: scale(1.07);
+        background-color: var(--fondo);
+        color: white;
+    }
 
 }
 
@@ -414,7 +543,6 @@ body{
     
     .examenes-registrados table {
         font-size: 15px;
-
     }  
     
     .btn-borrar{
@@ -479,9 +607,51 @@ body{
         padding: 0.3rem;
     }
 
-    .formularios input:focus {
+    .formulario-crear-examen input:focus {
         outline: none;
         box-shadow:  0 0 15px 3px rgba(182, 195, 251, 0.726);
     }
 
+    .header_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        min-height: 100%;
+    }
+
+    .header_brand{
+        display: grid;
+        grid-template-columns: 100px 1fr;
+    }
+
+    .header_acces{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .acces{
+        font-size: 0.9rem;
+
+    }
+
+    .navbar_menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+    }
+ 
+    .header_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        min-height: 100%;
+    
+    }
+
+    .formularios textarea{
+        border: 1px solid #d1d1d1;
+        border-radius: 5px;
+        font-size: 16px;
+    }
 }
