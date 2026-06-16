@@ -24,6 +24,7 @@
             <nav class="navbar_menu">
                 <a href="#/resolver" class="navbar_link_resolve">Resolver examen</a>
                 <a href="#/login" class="navbar_link_login">Login</a>
+                <a href="#/usuarios" class="navbar_link_usuarios">Usuarios</a>
             </nav>
 
             <div class="header_acces">
@@ -42,22 +43,24 @@
         <section class="info-examenes">
             <section class="formularios">
                 <h3>Crear examen</h3>
-                <div>
-                    <strong>Codigo</strong>
-                    <input type="text" id="codigo" name="codigo" required>
-                </div>
-                <div>
-                    <strong>Titulo</strong>
-                    <input type="text" id="titulo" name="titulo" placeholder="Ej: JS quiz" required>
-                </div>
-                <div>
-                    <strong>Tiempo en minutos</strong>
-                    <input type="number" id="tiempo" name="tiempo" placeholder="Ej: 10" required>
-                </div>
-                <div>
-                    <strong>Porcebtaje de Aprobacion</strong>
-                    <input type="number" id="aprobacion" name="aprobacion" placeholder="Ej: 70" required>
-                </div>
+                    <section class="formulario-crear-examen">
+                        <div>
+                            <strong>Codigo</strong>
+                            <input type="text" id="codigo" name="codigo" required>
+                        </div>
+                        <div>
+                            <strong>Titulo</strong>
+                            <input type="text" id="titulo" name="titulo" placeholder="Ej: JS quiz" required>
+                        </div>
+                        <div>
+                            <strong>Tiempo en minutos</strong>
+                            <input type="number" id="tiempo" name="tiempo" placeholder="Ej: 10" required>
+                        </div>
+                        <div>
+                            <strong>Porcebtaje de Aprobacion</strong>
+                            <input type="number" id="aprobacion" name="aprobacion" placeholder="Ej: 70" required>
+                        </div>
+                    </section>
                 <div>
                     <strong>Descripcion</strong>
                     <textarea id="descripcion" name="descripcion" required></textarea>
@@ -84,13 +87,11 @@
                         <input type="text" placeholder="Descripcion de la respuesta" required>
                         <button>Quitar</button>
                     </label>    
-
-                    <div class="parte_inferior_form">
-                        <button id="agregar">Agregar Respuesta</button>
-
-                        <button id="limpiar">Limpiar</button>
-                    </div>
                 </section>
+                <div class="parte_inferior_form">
+                    <button id="agregar">Agregar Respuesta</button>
+                    <button id="limpiar">Limpiar</button>
+                </div>
             </section>
             <section class="examenes-registrados">
                 <div>
@@ -116,8 +117,10 @@
                                     <td>70</td>
                                     <td>5</td>
                                     <td>
+                                        <div class="accionesBotones">
                                         <button class="btn-editar">Editar</button>
                                         <button class="btn-borrar">Borrar</button>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

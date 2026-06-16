@@ -2,7 +2,7 @@
     --color:rgb(63, 63, 253);
     --black:black;
     --white:white;
-    --fondo:#b6c3fb;
+    --fondo:rgb(182, 195, 251);
     --gris:#555;
 }
 
@@ -27,7 +27,8 @@ body{
 .header{
     grid-area: header;
     background-color: white;
-
+    border-bottom: 1px solid #8b8b8b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header_container{
@@ -95,6 +96,15 @@ body{
 
 
 .navbar_link_login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.navbar_link_usuarios{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -172,17 +182,18 @@ body{
 }
 
 .parte_inferior_form button{
-  border-radius: 5px;
-  padding: 6px;
-  border: 1.5px solid #0004ff;
-  background-color: #5582ff;
-  transition: all 0.3s ease;
-  cursor: pointer;
+    padding: 6px;
+    color: var(--fondo);
+    border-radius: 5px;
+    border: 1px solid #b1b1b1f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .parte_inferior_form button:hover{
     box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
-    background-color: rgb(57, 93, 255);
+    background-color: var(--fondo);
+    color: white;
     transform: scale(1.03);
 }
 
@@ -234,7 +245,7 @@ body{
 }
 
 .btn-editar{
-    background-color: #4CAF50;
+    background-color: #4c87af;
     color: white;
     font-size: 7px;
     border: none;
@@ -245,19 +256,19 @@ body{
 }
 
 .btn-editar:hover {
-    background-color: #45a049;
+    background-color: #4c6baf;
 }
 
 .cantidadRegistros{
     border-radius: 5px;
-    border: 1.5px solid #0004ff;
-    background-color: #5582ff;
+    border: 1.5px solid #7298ff;
+    background-color: var(--fondo);
+    color: white;
     display: flex;
     justify-content: flex-end;
     width: fit-content;
-    color: white;
     padding: 0.2rem 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
 
 }
 
@@ -290,7 +301,15 @@ body{
     border: 1px solid rgb(160, 160, 160);
     border-radius: 8px;
     color: #ff1a1a;
+    cursor: pointer;
     background-color: #ffffffe0;
+    transition: all 0.3s ease;
+}
+
+#examenPregunta div button:hover{
+    background-color: #ff1a1a;
+    color: white;
+    transform: scale(1.05);
 }
 
 #examenPregunta label button{
@@ -298,7 +317,15 @@ body{
     border-radius: 8px;
     color: #ff1a1a;
     margin-left: 10px;
+    cursor: pointer;
     background-color: #ffffffe0;
+    transition: all 0.3s ease;
+}
+
+#examenPregunta label button:hover{
+    background-color: #ff1a1a;
+    color: white;
+    transform: scale(1.05);
 }
 
 #check{
@@ -343,17 +370,15 @@ body{
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
-
-/* .tabla-scroll {
-  overflow-x: auto;
-  width: 100%;
-
-} */
-
 
 /* TABLET MEDIDAS */
 @media (min-width: 768px){
+
+
 
 
 }
@@ -361,6 +386,102 @@ body{
 
 /* PC MEDIDAS */
 @media (min-width: 1024px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .titulos{
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 2rem;
+    }
+
+    .info-examenes{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 1200px;
+        align-items: start;
+    }
+
+    .tabla-scroll {
+        overflow-x: auto;
+        width: 100%;
+
+    }
+    
+    .examenes-registrados table {
+        font-size: 15px;
+
+    }  
+    
+    .btn-borrar{
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-borrar:hover {
+        background-color: #ff1a1a;
+    }
+
+    .btn-editar{
+        background-color: #4c87af;
+        color: white;
+        font-size: 15px;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-editar:hover {
+        background-color: #4c6baf;
+    }
+
+    .accionesBotones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .examenes-registrados{
+        background-color: #ffffffe0;
+        margin: 0.5rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
+        min-width: 0;
+    }
+
+    .formulario-crear-examen{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+    }
+
+    .formularios{
+        padding: 1.5rem;
+    }
+
+    .formularios input{
+        font-size: 14px;
+        padding: 0.3rem;
+    }
+
+    .formularios input:focus {
+        outline: none;
+        box-shadow:  0 0 15px 3px rgba(182, 195, 251, 0.726);
+    }
 
 }
