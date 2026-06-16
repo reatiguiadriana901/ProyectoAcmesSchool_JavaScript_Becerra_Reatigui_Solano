@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acme School — Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body class="login-page">
+
+  <!-- NAVBAR PÚBLICA -->
+  <nav class="navbar-public">
+    <div class="nav-brand">
+      <div class="brand-logo">A</div>
+      <span>Acme School</span>
+    </div>
+    <div class="nav-actions">
+      <a href="pages/examen-publico.html" class="nav-link-public">Buscar examen</a>
+      <span class="btn btn-primary btn-sm nav-login-badge">Login</span>
+    </div>
+  </nav>
+
+  <!-- SPLIT SCREEN -->
+  <div class="login-split">
+
+    <!-- PANEL IZQUIERDO: Hero -->
+    <div class="login-hero">
+      <div class="hero-content">
+        <span class="hero-badge">MÓDULO PRIVADO</span>
+        <h1 class="hero-title">
+          Gestiona usuarios y exámenes con una cuenta autorizada.
+        </h1>
+        <p class="hero-sub">
+          Ingresa para administrar el banco de exámenes de Acme School.
+          Los estudiantes pueden resolver pruebas desde el Módulo público.
+        </p>
+      </div>
+      <!-- Decoración de círculos -->
+      <div class="hero-deco hero-deco-1"></div>
+      <div class="hero-deco hero-deco-2"></div>
+    </div>
+
+    <!-- PANEL DERECHO: Formulario -->
+    <div class="login-panel">
+      <form class="login-form" id="loginForm" novalidate>
+        <h2>Iniciar sesión</h2>
+
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="admin@acme.edu.co"
+            autocomplete="email"
+            required
+          />
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Contraseña</label>
+          <div class="input-password">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="toggle-pass" id="togglePass" title="Mostrar contraseña">👁</button>
+          </div>
+          <span class="field-error" id="passwordError"></span>
+        </div>
+
+        <div class="form-message" id="loginMessage"></div>
+
+        <button type="submit" class="btn btn-primary btn-full" id="loginBtn">
+          Ingresar
+        </button>
+
+        <p class="login-hint">
+          Credenciales de prueba:<br/>
+          <strong>admin@acme.edu.co</strong> / <strong>admin123</strong>
+        </p>
+      </form>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/utils/storage.js"></script>
+  <script type="module" src="js/utils/seed.js"></script>
+  <script type="module" src="js/modules/auth.js"></script>
+  <script type="module" src="js/pages/login.js"></script>
+</body>
+</html>

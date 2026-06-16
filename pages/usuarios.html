@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acme School — Gestión de usuarios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body class="dashboard-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="brand-logo">A</div>
+      <span>Acme School</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="usuarios.html" class="nav-link active">Usuarios</a></li>
+      <li><a href="examenes.html" class="nav-link">Exámenes</a></li>
+    </ul>
+    <div class="nav-user" id="navUser">
+      <span class="nav-user-name" id="navUserName">—</span>
+      <button class="btn btn-outline btn-sm" id="logoutBtn">Cerrar sesión</button>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1>Gestión de usuarios</h1>
+        <p class="page-subtitle">Administra las cuentas con acceso a la plataforma</p>
+      </div>
+      <button class="btn btn-primary" id="btnNuevoUsuario">+ Nuevo usuario</button>
+    </div>
+
+    <!-- TABLA -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Usuarios registrados</h2>
+        <input type="search" class="search-input" id="searchUsuarios" placeholder="Buscar por nombre o email…" />
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table" id="tablaUsuarios">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre completo</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Cargo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyUsuarios">
+            <!-- Filas generadas por JS -->
+          </tbody>
+        </table>
+        <div class="empty-state" id="emptyUsuarios" style="display:none">
+          <p>No hay usuarios registrados todavía.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL FORMULARIO -->
+  <div class="modal-overlay" id="modalUsuario" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Nuevo usuario</h3>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      </div>
+
+      <form class="modal-form" id="formUsuario" novalidate>
+        <input type="hidden" id="userId" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userIdNum">Número de identificación *</label>
+            <input type="text" id="userIdNum" placeholder="1234567890" required />
+            <span class="field-error" id="errIdNum"></span>
+          </div>
+          <div class="form-group">
+            <label for="userCargo">Cargo *</label>
+            <select id="userCargo" required>
+              <option value="">Seleccionar…</option>
+              <option value="administrativo">Administrativo</option>
+              <option value="docente">Docente</option>
+            </select>
+            <span class="field-error" id="errCargo"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userName">Nombre completo *</label>
+          <input type="text" id="userName" placeholder="Ej. María García" required />
+          <span class="field-error" id="errName"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userEmail">Email *</label>
+            <input type="email" id="userEmail" placeholder="usuario@acme.edu.co" required />
+            <span class="field-error" id="errEmail"></span>
+          </div>
+          <div class="form-group">
+            <label for="userPhone">Teléfono</label>
+            <input type="tel" id="userPhone" placeholder="300 000 0000" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userPassword">Contraseña *</label>
+          <div class="input-password">
+            <input type="password" id="userPassword" placeholder="Mínimo 6 caracteres" autocomplete="new-password" required />
+            <button type="button" class="toggle-pass" id="togglePassModal">👁</button>
+          </div>
+          <span class="field-error" id="errPassword"></span>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="btnCancelar">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script type="module" src="../js/utils/storage.js"></script>
+  <script type="module" src="../js/modules/auth.js"></script>
+  <script type="module" src="../js/modules/usuarios.js"></script>
+  <script type="module" src="../js/pages/usuarios.js"></script>
+</body>
+</html>
