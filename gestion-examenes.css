@@ -177,10 +177,124 @@ body{
   border: 1.5px solid #0004ff;
   background-color: #5582ff;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .parte_inferior_form button:hover{
     box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
     background-color: rgb(57, 93, 255);
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
+
+.examenes-registrados{
+    background-color: #ffffffe0;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    box-shadow:  1px 5px 5px rgba(75, 75, 75, 0.123);
+    min-width: 0;
+
+}
+
+.examenes-registrados table{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.examenes-registrados th, .examenes-registrados td{
+    border: 1px solid #d1d1d1;
+    padding: 8px;
+    text-align: left;
+}
+
+
+.examenes-registrados table {
+    font-size: 8.8px;
+}
+
+.examenes-registrados th,
+.examenes-registrados td {
+    padding: 4px 6px;
+}
+
+.btn-borrar{
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    font-size: 7px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-borrar:hover {
+    background-color: #ff1a1a;
+}
+
+.btn-editar{
+    background-color: #4CAF50;
+    color: white;
+    font-size: 7px;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+    background-color: #45a049;
+}
+
+.cantidadRegistros{
+    border-radius: 5px;
+    border: 1.5px solid #0004ff;
+    background-color: #5582ff;
+    display: flex;
+    justify-content: flex-end;
+    width: fit-content;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+
+}
+
+#examenPregunta{
+    border: 1px solid #c9c9c9;
+    border-left: 5px solid var(--fondo);
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+}
+
+#examenPregunta div{
+    display: flex;
+}
+
+#examenPregunta div{
+    display: flex;
+}
+
+#examenPregunta label{
+    display: flex;
+}
+
+#examenPregunta div button{
+    border: 0px solid white;
+    color: #ff1a1a;
+    background-color: #ffffffe0;
+}
+
+#check{
+    border-radius: 500px;
+    background-color: #ffffff;
+}
+
+/* .tabla-scroll {
+  overflow-x: auto;
+  width: 100%;
+
+} */
+
