@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="examen.css">
+</head>
+<body class="general">
+
+    <header class="header">
+        <div class="header_container">
+            <div class="header_brand">
+                <div class="header_logo">
+                    <span class="logo">A</span>
+                </div>
+                <div class="header_title-group">
+                    <span class="header_school-name">Acme School</span>
+                    <span class="header_platform-type">Exams platform</span>
+                </div>
+            </div>
+
+            <nav class="navbar_menu">
+                <a href="#/resolver" class="navbar_link_resolve">Resolver examen</a>
+                <a href="#/login" class="navbar_link_login">Login</a>
+            </nav>
+
+            <div class="header_acces">
+                <p class="acces">Acceso publico</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="main_container">
+            <div class="main_information">
+                <div class="information">
+
+                    <span class="record_code"></span>
+                    <h1 class="record_title"></h1>
+                    
+                    <div class="aditional_information">
+                        <p class="total_preguntas"></p>
+                        <p class="approbation"></p>
+                    </div>
+
+                </div>
+
+                <div class="timer_container">
+                    <p id="timer" class="timer">00</p>
+                </div>
+
+            </div>
+
+            <div class="lista_preguntas"></div>
+
+            <div class="contenedor_terminar">
+                <button class="btn_terminar">Terminar</button>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal_contenido">
+            <h2 class="modal_titulo"></h2>
+            <p class="modal_porcentaje"></p>
+            <p class="modal_mensaje"></p>
+            <button class="modal_btn">Volver al inicio</button>
+        </div>
+    </div>
+    <script src="examen.js"></script>
+
+</body>
+</html>
