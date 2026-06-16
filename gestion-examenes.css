@@ -279,11 +279,25 @@ body{
 
 #examenPregunta label{
     display: flex;
+    margin-top: 10px;
+}
+
+#examenPregunta label input{
+    font-size: 15px;
 }
 
 #examenPregunta div button{
-    border: 0px solid white;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 8px;
     color: #ff1a1a;
+    background-color: #ffffffe0;
+}
+
+#examenPregunta label button{
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 8px;
+    color: #ff1a1a;
+    margin-left: 10px;
     background-color: #ffffffe0;
 }
 
@@ -292,9 +306,61 @@ body{
     background-color: #ffffff;
 }
 
+#examenPregunta div #agregar{
+    margin: 10px;
+    padding: 4px 8px;
+    color: var(--fondo);
+    border-radius: 5px;
+    border: 1px solid #b1b1b1f0;
+    transition: all 0.3s ease;
+     cursor: pointer;
+}
+
+#examenPregunta div #agregar:hover{
+    transform: scale(1.05);
+    background-color: var(--fondo);
+    color: white;
+}
+
+#examenPregunta div #limpiar{
+    margin: 10px;
+    padding: 4px 8px;
+    color: var(--fondo);
+    border-radius: 5px;
+    border: 1px solid #b1b1b1f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#examenPregunta div #limpiar:hover{
+    transform: scale(1.05);
+    background-color: var(--fondo);
+    color: white;
+}
+
+.parte_inferior_form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* .tabla-scroll {
   overflow-x: auto;
   width: 100%;
 
 } */
 
+
+/* TABLET MEDIDAS */
+@media (min-width: 768px){
+
+
+}
+
+
+/* PC MEDIDAS */
+@media (min-width: 1024px){
+
+
+}

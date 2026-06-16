@@ -73,13 +73,23 @@
 
                     <div><input type="text" id="preguntaContenido" name="preguntaContenido" required> <button>Eliminar</button></div>
 
-                    <label>
-                        <input  id="check"  type="checkbox"><input type="text" id="preguntaContenido" name="preguntaContenido" required><button>quitar</button>
+                    <label class="opcion-respuesta">
+                        <input type="radio" name="respuesta-1">
+                        <input type="text" placeholder="Descripcion de la respuesta" required>
+                        <button>Quitar</button>
                     </label>
 
-                    <label>
-                        <input id="check" type="checkbox"><input type="text" id="preguntaContenido" name="preguntaContenido" required><button>quitar</button>
-                    </label>
+                    <label class="opcion-respuesta">
+                        <input type="radio" name="respuesta-1">
+                        <input type="text" placeholder="Descripcion de la respuesta" required>
+                        <button>Quitar</button>
+                    </label>    
+
+                    <div class="parte_inferior_form">
+                        <button id="agregar">Agregar Respuesta</button>
+
+                        <button id="limpiar">Limpiar</button>
+                    </div>
                 </section>
             </section>
             <section class="examenes-registrados">
