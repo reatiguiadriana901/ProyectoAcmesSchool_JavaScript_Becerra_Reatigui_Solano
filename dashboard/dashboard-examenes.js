@@ -1,42 +1,6 @@
-const examenes = [            
-    {
-        codigo: "JS-101",
-        titulo: "Fundamentos de JavaScript",
-        tiempo: 10,
-        porcentaje: 70,
-        descripcion: "Evalua concepto basicos de variables, manejo del DOM, funciones y arreglos en JavaScript",
-        preguntas: [
-            {
-                texto: "¿Cuál palabra permite declarar una constante?",
-                respuestas: [
-                    { texto: "let", esCorrecta: false },
-                    { texto: "const", esCorrecta: true },
-                    { texto: "var", esCorrecta: false },
-                ]
-            },
-
-            {
-                texto: "¿Que metodo permite recorrer un arreglo sin crear uno nuevo?",
-                respuestas: [
-                    { texto: "forEach", esCorrecta: true },
-                    { texto: "map", esCorrecta: false },
-                    { texto: "filter", esCorrecta: false}
-                ]
-            },
-
-            {
-                texto: "¿Que API del navegador se usa para guardar datos persitentes simples?",
-                respuestas: [
-                    { texto: "localstorage", esCorrecta: true },
-                    { texto: "webstorage", esCorrecta: false },
-                    { texto: "cookies", esCorrecta: false}
-                ]
-            },
-        ]
-}]
 
 
-//const examenes = JSON.parse(localStorage.getItem('como santiago lo llame cuando le de set item al localStorage'))   
+const examenes = JSON.parse(localStorage.getItem('acme_exams')) || []   
 
 const tarjeta = document.getElementById("catalogo_grid");
 
