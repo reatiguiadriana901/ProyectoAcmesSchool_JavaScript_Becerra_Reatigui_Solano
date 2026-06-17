@@ -183,6 +183,29 @@ body {
 .header_acces {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.header-user-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.btn-salir {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 14px;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.btn-salir:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
 }
 
 .acces {
