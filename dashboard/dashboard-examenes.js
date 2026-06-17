@@ -1,5 +1,3 @@
-
-
 const examenes = JSON.parse(localStorage.getItem('acme_exams')) || []   
 
 const tarjeta = document.getElementById("catalogo_grid");
