@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Acme School — Gestión de Exámenes</title>
+    <link rel="stylesheet" href="gestion-examenes.css">
+</head>
+<body class="general">
+    <header class="header">
+        <div class="header_container">
+            <div class="header_brand">
+                <div class="header_logo">
+                    <span class="logo">A</span>
+                </div>
+                <div class="header_title-group">
+                    <span class="header_school-name">Acme School</span>
+                    <span class="header_platform-type">Exams platform</span>
+                </div>
+            </div>
+
+            <nav class="navbar_menu">
+                <a href="#/resolver" class="navbar_link_usuarios">Resolver examen</a>
+                <a href="#/login" class="navbar_link_login">Usuarios</a>
+                <a href="#/usuarios" class="navbar_link_resolve">Examenes</a>
+            </nav>
+
+            <div class="header_acces">
+                <p class="acces">Acceso Administrativo</p>
+                <button class="acces">Salir</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+      <div class="titulos">
+        <strong>Biblioteca de Pruebas</strong>
+        <h1>Gestion De Examenes</h1>
+        <p>Configura examenes, preguntas y respuestas. Cada pregunta admite solo una respuesta correcta</p>
+      </div>
+
+        <section class="info-examenes">
+            <section class="formularios">
+                <h3>Crear examen</h3>
+                    <section class="formulario-crear-examen">
+                        <div>
+                            <strong>Codigo</strong>
+                            <input type="text" id="codigo" name="codigo" required>
+                        </div>
+                        <div>
+                            <strong>Titulo</strong>
+                            <input type="text" id="titulo" name="titulo" placeholder="Ej: JS quiz" required>
+                        </div>
+                        <div>
+                            <strong>Tiempo en minutos</strong>
+                            <input type="number" id="tiempo" name="tiempo" placeholder="Ej: 10" required>
+                        </div>
+                        <div>
+                            <strong>Porcebtaje de Aprobacion</strong>
+                            <input type="number" id="aprobacion" name="aprobacion" placeholder="Ej: 70" required>
+                        </div>
+                    </section>
+                <div>
+                    <strong>Descripcion</strong>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+                </div>
+
+                <div class="parte_inferior_form">
+                    <p><strong>Preguntas</strong></p>
+                    <button id="btnAgregarPregunta">Agregar pregunta</button>
+                </div>
+
+                <section id="examenPregunta">
+ 
+                </section>
+                <div class="parte_inferior_form">
+                    <button id="agregar">Crear Examen</button>
+                    <button id="limpiar">Limpiar</button>
+                </div>
+            </section>
+            <section class="examenes-registrados">
+                <div>
+                    <div class="er-header">
+                        <strong>Examenes registrados</strong>
+                        <p class="cantidadRegistros"><strong>0-</strong> Registros</p>
+                    </div>
+                    <div class="tabla-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Examen</th>
+                                    <th>Tiempo</th>
+                                    <th>Aprobacion</th>
+                                    <th>Preguntas</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- filas generadas por JS -->
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+            </section>
+        </section>
+
+    </main>
+    <script src="./gestion-examenes.js"></script>
+</body>
+</html>
