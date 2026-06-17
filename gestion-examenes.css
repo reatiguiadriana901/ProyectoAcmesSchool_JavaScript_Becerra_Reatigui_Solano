@@ -1,6 +1,4 @@
-/* =============================================
-   Variables — misma paleta que main.css
-   ============================================= */
+
 :root {
   --color-primary:       #4F46E5;
   --color-primary-dark:  #3730A3;
@@ -34,14 +32,14 @@
   --transition: 0.18s ease;
 }
 
-/* ── Reset ── */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; }
 input, textarea, select { font-family: inherit; }
 
-/* ── Layout raíz ── */
+
 body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -60,7 +58,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── Header / Navbar ── */
 .header {
   grid-area: header;
   height: 60px;
@@ -86,6 +83,14 @@ body {
   align-items: center;
   gap: 10px;
 }
+
+  .agrRespuesta{
+    border-radius: 5px;
+    border: 0px;
+    color: var(--color-primary);
+    background-color: var(--color-bg);
+    font-size: 14px;
+  }
 
 .header_logo {
   display: flex;
@@ -124,7 +129,6 @@ body {
   color: var(--color-text-muted);
 }
 
-/* ── Navegación ── */
 .navbar_menu {
   display: flex;
   align-items: center;
@@ -181,14 +185,13 @@ body {
   text-transform: uppercase;
 }
 
-/* ── Main ── */
 .main {
   grid-area: main;
   background: var(--color-bg);
   padding-bottom: 3rem;
 }
 
-/* ── Títulos de sección ── */
+
 .titulos {
   padding: 2rem 1rem 1rem;
 }
@@ -217,14 +220,13 @@ body {
   color: var(--color-text-muted);
 }
 
-/* ── Layout info-examenes ── */
+
 .info-examenes {
   display: grid;
   grid-template-rows: auto auto;
   gap: 0;
 }
 
-/* ── Tarjeta formulario ── */
 .formularios {
   background: var(--color-surface);
   margin: 0.5rem;
@@ -279,7 +281,6 @@ body {
   gap: 0;
 }
 
-/* ── Sección pregunta ── */
 #examenPregunta {
   border: 1.5px solid var(--color-border);
   border-left: 4px solid var(--color-primary);
@@ -353,7 +354,6 @@ body {
   background: rgba(79,70,229,.06);
 }
 
-/* ── Parte inferior formulario ── */
 .parte_inferior_form {
   display: flex !important;
   align-items: center;
@@ -388,7 +388,6 @@ body {
   transform: scale(1.02);
 }
 
-/* ── Tarjeta examenes registrados ── */
 .examenes-registrados {
   background: var(--color-surface);
   margin: 0.5rem;
@@ -500,11 +499,7 @@ body {
   color: #fff;
 }
 
-/* ════════════════════════════════════════
-   RESPONSIVE
-   ════════════════════════════════════════ */
-
-/* ── Celular pequeño (< 480px) ── */
+/* ── Celular(< 480px) ── */
 @media (max-width: 479px) {
   /* Header compacto */
   .header_container {
@@ -532,7 +527,6 @@ body {
     font-size: var(--text-2xl);
   }
 
-  /* Tarjetas con menos padding en celular */
   .formularios,
   .examenes-registrados {
     margin: 0.5rem;
@@ -540,7 +534,7 @@ body {
     border-radius: var(--radius-md);
   }
 
-  /* Inputs y textarea táctiles */
+
   .formularios input,
   .formularios textarea {
     padding: 12px 14px;
@@ -548,7 +542,6 @@ body {
     min-height: 44px;
   }
 
-  /* Parte inferior del form: apilar verticalmente */
   .parte_inferior_form {
     flex-direction: column;
     align-items: stretch;
@@ -561,19 +554,18 @@ body {
     font-size: var(--text-base);
   }
 
-  /* Botones de pregunta más táctiles */
+
+
   #examenPregunta div button,
   #examenPregunta label button {
     padding: 8px 12px;
     font-size: var(--text-xs);
   }
 
-  /* Inputs de respuesta: flex-wrap para que no desborden */
   #examenPregunta label {
     flex-wrap: wrap;
   }
 
-  /* Botones acción tabla */
   .accionesBotones {
     flex-direction: column;
     gap: 4px;
@@ -587,14 +579,14 @@ body {
   }
 }
 
-/* ── Celular (480px – 767px) ── */
+
 @media (min-width: 480px) and (max-width: 767px) {
   .header_container {
     padding: 0 16px;
     gap: 12px;
   }
 
-  /* Ocultar badge en celular mediano */
+
   .header_acces {
     display: none;
   }
@@ -624,7 +616,7 @@ body {
   }
 }
 
-/* ── Tablet (768px – 1023px) ── */
+/* ── Tablet ── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .header_container {
     padding: 0 24px;
@@ -638,13 +630,12 @@ body {
     padding: 2rem 1.5rem 1rem;
   }
 
-  /* 2 columnas en el formulario */
   .formulario-crear-examen {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
 
-  /* Las tarjetas ocupan el ancho completo (una sobre otra) */
+
   .info-examenes {
     grid-template-columns: 1fr;
   }
@@ -656,7 +647,22 @@ body {
   }
 }
 
-/* ── Desktop (≥ 1024px) ── */
+.bloque-pregunta {
+    border: 1px solid #c9c9c9;
+    border-left: 5px solid var(--color-primary-light);
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.bloque-pregunta .opcion-respuesta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
 @media (min-width: 1024px) {
   .main {
     display: flex;

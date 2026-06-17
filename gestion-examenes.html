@@ -24,11 +24,12 @@
             <nav class="navbar_menu">
                 <a href="#/resolver" class="navbar_link_usuarios">Resolver examen</a>
                 <a href="#/login" class="navbar_link_login">Usuarios</a>
-                <a href="#/usuarios" class="navbar_link_resolve">Examenos</a>
+                <a href="#/usuarios" class="navbar_link_resolve">Examenes</a>
             </nav>
 
             <div class="header_acces">
-                <p class="acces">Acceso publico</p>
+                <p class="acces">Acceso Administrativo</p>
+                <button class="acces">Salir</button>
             </div>
         </div>
     </header>
@@ -68,28 +69,14 @@
 
                 <div class="parte_inferior_form">
                     <p><strong>Preguntas</strong></p>
-                    <button>Agregar pregunta</button>
+                    <button id="btnAgregarPregunta">Agregar pregunta</button>
                 </div>
 
                 <section id="examenPregunta">
-                    <h3>Pregunta <strong>1</strong></h3>
-
-                    <div><input type="text" id="preguntaContenido" name="preguntaContenido" required> <button>Eliminar</button></div>
-
-                    <label class="opcion-respuesta">
-                        <input type="radio" name="respuesta-1">
-                        <input type="text" placeholder="Descripcion de la respuesta" required>
-                        <button>Quitar</button>
-                    </label>
-
-                    <label class="opcion-respuesta">
-                        <input type="radio" name="respuesta-1">
-                        <input type="text" placeholder="Descripcion de la respuesta" required>
-                        <button>Quitar</button>
-                    </label>    
+ 
                 </section>
                 <div class="parte_inferior_form">
-                    <button id="agregar">Agregar Respuesta</button>
+                    <button id="agregar">Crear Examen</button>
                     <button id="limpiar">Limpiar</button>
                 </div>
             </section>
