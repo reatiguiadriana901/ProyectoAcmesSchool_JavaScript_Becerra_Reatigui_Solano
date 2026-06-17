@@ -8,7 +8,7 @@ import { login, isLoggedIn } from '../modules/auth.js';
 
 // Si ya hay sesión activa, redirigir directo al dashboard
 if (isLoggedIn()) {
-  window.location.href = 'gestion-examenes.html';
+  window.location.href = 'pages/gestion-examenes.html';
 }
 
 const form       = document.getElementById('loginForm');
@@ -67,7 +67,7 @@ form.addEventListener('submit', (e) => {
     if (result.ok) {
       setMessage('¡Bienvenido! Redirigiendo…', 'success');
       setTimeout(() => {
-        window.location.href = 'gestion-examenes.html';
+        window.location.href = 'pages/gestion-examenes.html';
       }, 800);
     } else {
       setMessage(result.error, 'error');

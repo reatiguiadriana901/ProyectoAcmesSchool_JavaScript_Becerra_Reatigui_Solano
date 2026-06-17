@@ -3,37 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acme School — Gestión de Exámenes</title>
+    <link rel="icon" type="image/png" href="../assets/1988007.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>Acme School — Gestión de Exámenes</title>
-    <link rel="stylesheet" href="gestion-examenes.css">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/gestion-examenes.css">
 </head>
-<body class="general">
-    <header class="header">
-        <div class="header_container">
-            <div class="header_brand">
-                <div class="header_logo">
-                    <span class="logo">A</span>
-                </div>
-                <div class="header_title-group">
-                    <span class="header_school-name">Acme School</span>
-                    <span class="header_platform-type">Exams platform</span>
-                </div>
-            </div>
+<body class="dashboard-page">
 
-            <nav class="navbar_menu">
-                <a href="dashboard/dashboard-examenes.html" class="navbar_link_usuarios">Resolver examen</a>
-                <a href="pages/usuarios.html" class="navbar_link_login">Usuarios</a>
-                <a href="gestion-examenes.html" class="navbar_link_resolve">Exámenes</a>
-            </nav>
-
-            <div class="header_acces">
-                <p class="acces">Acceso Administrativo</p>
-                <span id="navUserName" class="header-user-name">—</span>
-                <button id="btnSalir" class="btn-salir">Salir</button>
-            </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <img class="brand-logo" src="../assets/1988007.png" alt="Acme School logo" />
+            <span>Acme School</span>
         </div>
-    </header>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="usuarios.html" class="nav-link">Usuarios</a></li>
+            <li><a href="gestion-examenes.html" class="nav-link active">Exámenes</a></li>
+        </ul>
+        <div class="nav-user" id="navUser">
+            <span class="nav-user-name" id="navUserName">—</span>
+            <button class="btn btn-outline btn-sm" id="btnSalir">Cerrar sesión</button>
+        </div>
+    </nav>
 
     <main class="main">
       <div class="titulos">
@@ -109,6 +102,6 @@
         </section>
 
     </main>
-    <script src="./gestion-examenes.js"></script>
+    <script src="../js/pages/gestion-examenes.js"></script>
 </body>
 </html>

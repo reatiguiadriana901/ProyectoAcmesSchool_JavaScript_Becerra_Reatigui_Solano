@@ -1,14 +1,14 @@
 // ── Auth guard ────────────────────────────────
 const session = JSON.parse(localStorage.getItem('acme_session'));
 if (!session) {
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 document.getElementById('navUserName').textContent = session ? session.name : '—';
 
 document.getElementById('btnSalir').addEventListener('click', () => {
     localStorage.removeItem('acme_session');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 });
 
 // ── Storage ───────────────────────────────────

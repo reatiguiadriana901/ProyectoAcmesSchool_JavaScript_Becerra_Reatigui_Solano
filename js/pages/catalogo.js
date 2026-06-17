@@ -1,44 +1,11 @@
-const examenes = [            
-    {
-        codigo: "JS-101",
-        titulo: "Fundamentos de JavaScript",
-        tiempo: 10,
-        porcentaje: 70,
-        descripcion: "Evalua concepto basicos de variables, manejo del DOM, funciones y arreglos en JavaScript",
-        preguntas: [
-            {
-                texto: "¿Cuál palabra permite declarar una constante?",
-                respuestas: [
-                    { texto: "let", esCorrecta: false },
-                    { texto: "const", esCorrecta: true },
-                    { texto: "var", esCorrecta: false },
-                ]
-            },
-
-            {
-                texto: "¿Que metodo permite recorrer un arreglo sin crear uno nuevo?",
-                respuestas: [
-                    { texto: "forEach", esCorrecta: true },
-                    { texto: "map", esCorrecta: false },
-                    { texto: "filter", esCorrecta: false}
-                ]
-            },
-
-            {
-                texto: "¿Que API del navegador se usa para guardar datos persitentes simples?",
-                respuestas: [
-                    { texto: "localstorage", esCorrecta: true },
-                    { texto: "webstorage", esCorrecta: false },
-                    { texto: "cookies", esCorrecta: false}
-                ]
-            },
-        ]
-}]
-
-
-//const examenes = JSON.parse(localStorage.getItem('como santiago lo llame cuando le de set item al localStorage'))   
+const examenes = JSON.parse(localStorage.getItem('acme_exams')) || [];
 
 const tarjeta = document.getElementById("catalogo_grid");
+
+if (examenes.length === 0) {
+    document.querySelector('.catalogo_grid').innerHTML =
+        '<p style="grid-column:1/-1;text-align:center;color:#64748B;padding:3rem 0">No hay exámenes disponibles todavía.</p>';
+}
 
 examenes.forEach((examen) => {
     const nuevaTarjeta = document.createElement('div')
@@ -68,7 +35,7 @@ examenes.forEach((examen) => {
     boton.addEventListener('click', () => {
         localStorage.setItem('examenSeleccionado', JSON.stringify(examen))
 
-        window.location.href = '../registro_examen/registro.html'
+        window.location.href = 'registro.html'
     })
     document.querySelector('.catalogo_grid').appendChild(nuevaTarjeta)
 })

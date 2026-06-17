@@ -1,6 +1,6 @@
 const boton_volver = document.querySelector('.volver')
     boton_volver.addEventListener('click', () => {
-        window.location.href = '../dashboard/dashboard-examenes.html'
+        window.location.href = 'catalogo.html'
     })
 
 const examenSeleccionado = JSON.parse(localStorage.getItem('examenSeleccionado'))
@@ -19,6 +19,7 @@ botonIniciar.addEventListener('click', () => {
     document.querySelector('.mensaje_error').textContent = 'Por favor completa todos los campos'
     } else {
     const datosEstudiante = { nombre: usuarioNombre, identificacion: usuarioIdentificacion }
-    window.location.href = '../examen/examen.html'
+    localStorage.setItem('acme_estudiante', JSON.stringify(datosEstudiante))
+    window.location.href = 'examen.html'
     }
 })

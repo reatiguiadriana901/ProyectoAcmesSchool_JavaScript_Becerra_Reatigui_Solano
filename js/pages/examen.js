@@ -39,7 +39,8 @@ const intervalo = setInterval(() => {
     displayTimer.textContent = `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`
     if (tiempo <= 0) {
         clearInterval(intervalo);
-        displayTimer.textContent = '¡Tiempo cumplido!';
+        displayTimer.textContent = '00:00';
+        botonTerminar.click();
     }
 }, 1000)
 
@@ -79,7 +80,7 @@ botonTerminar.addEventListener('click', () => {
     modal.style.display = 'flex'
 
     document.querySelector('.modal_btn').addEventListener('click', () => {
-        window.location.href = '../dashboard/dashboard-examenes.html'
+        window.location.href = 'catalogo.html'
 })
 
 })
