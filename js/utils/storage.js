@@ -122,5 +122,26 @@ export function isLoggedIn() {
   return getSession() !== null;
 }
 
+// ── EXÁMENES ──────────────────────────────────
+
+export function getExams() {
+  return getCollection(KEYS.EXAMS);
+}
+
+export function saveExams(exams) {
+  saveCollection(KEYS.EXAMS, exams);
+}
+
+export function createExam(examData) {
+  const exams = getExams();
+  if (exams.some(e => e.id === examData.id || e.codigo === examData.codigo)) {
+    return { ok: false, error: 'Ya existe un examen con ese id o código.' };
+  }
+  const newExam = { ...examData, createdAt: examData.createdAt ?? new Date().toISOString() };
+  exams.push(newExam);
+  saveExams(exams);
+  return { ok: true, exam: newExam };
+}
+
 // Exportar KEYS por si otros módulos necesitan acceder a exams / results
 export { KEYS };

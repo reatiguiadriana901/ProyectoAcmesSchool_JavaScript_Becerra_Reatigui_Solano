@@ -20,6 +20,6 @@ botonIniciar.addEventListener('click', () => {
     } else {
     const datosEstudiante = { nombre: usuarioNombre, identificacion: usuarioIdentificacion }
     localStorage.setItem('acme_estudiante', JSON.stringify(datosEstudiante))
-    window.location.href = 'examen.html'
+    window.location.href = '../examen/examen.html'
     }
 })

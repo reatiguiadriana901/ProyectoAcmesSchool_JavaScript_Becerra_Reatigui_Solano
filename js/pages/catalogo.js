@@ -1,6 +1,6 @@
-const examenes = JSON.parse(localStorage.getItem('acme_exams')) || [];
+document.addEventListener('DOMContentLoaded', () => {
 
-const tarjeta = document.getElementById("catalogo_grid");
+const examenes = JSON.parse(localStorage.getItem('acme_exams')) || [];
 
 if (examenes.length === 0) {
     document.querySelector('.catalogo_grid').innerHTML =
@@ -39,3 +39,5 @@ examenes.forEach((examen) => {
     })
     document.querySelector('.catalogo_grid').appendChild(nuevaTarjeta)
 })
+
+}); // DOMContentLoaded

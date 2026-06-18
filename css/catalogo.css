@@ -47,10 +47,11 @@
     color: rgba(255,255,255,.8);
 }
 
-/* ── Grid de tarjetas ── */
+/* ── Cascada de tarjetas ── */
 .catalogo_grid {
-    display: grid;
-    gap: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 /* ── Tarjeta de examen ── */
@@ -138,12 +139,6 @@
 }
 
 /* ── Responsive ── */
-@media (min-width: 640px) {
-    .catalogo_grid {
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    }
-}
-
 @media (min-width: 768px) {
     .catalogo-main { padding: 2.5rem 2rem; }
 
