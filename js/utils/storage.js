@@ -1,8 +1,9 @@
 const KEYS = {
-  USERS:   'acme_users',
-  SESSION: 'acme_session',
-  EXAMS:   'acme_exams',     // lo usarán los otros devs
-  RESULTS: 'acme_results',   // lo usarán los otros devs
+  USERS:      'acme_users',
+  SESSION:    'acme_session',
+  EXAMS:      'acme_exams',
+  RESULTS:    'acme_results',
+  STUDENTS:   'acme_estudiantes',
 };
 
 // ── Generar ID único simple ──
@@ -141,6 +142,75 @@ export function createExam(examData) {
   exams.push(newExam);
   saveExams(exams);
   return { ok: true, exam: newExam };
+}
+
+// ── ESTUDIANTES ───────────────────────────────
+
+export function getStudents() {
+  return getCollection(KEYS.STUDENTS);
+}
+
+export function saveStudents(students) {
+  saveCollection(KEYS.STUDENTS, students);
+}
+
+export function getStudentByIdNumber(identificacion) {
+  return getStudents().find(s => s.identificacion === String(identificacion)) ?? null;
+}
+
+export function createStudent(data) {
+  const students = getStudents();
+
+  if (students.some(s => s.identificacion === String(data.identificacion))) {
+    return { ok: false, error: 'Ya existe un estudiante con esa identificación.' };
+  }
+  if (students.some(s => s.email === data.email.toLowerCase())) {
+    return { ok: false, error: 'Ya existe un estudiante con ese email.' };
+  }
+
+  const newStudent = {
+    id:              generateId(),
+    identificacion:  String(data.identificacion).trim(),
+    nombre:          data.nombre.trim(),
+    email:           data.email.toLowerCase().trim(),
+    genero:          data.genero ?? '',
+    fechaNacimiento: data.fechaNacimiento ?? '',
+    createdAt:       new Date().toISOString(),
+  };
+
+  students.push(newStudent);
+  saveStudents(students);
+  return { ok: true, student: newStudent };
+}
+
+export function updateStudent(id, changes) {
+  const students = getStudents();
+  const idx = students.findIndex(s => s.id === id);
+  if (idx === -1) return { ok: false, error: 'Estudiante no encontrado.' };
+
+  if (changes.identificacion) {
+    const dup = students.find(s => s.identificacion === String(changes.identificacion) && s.id !== id);
+    if (dup) return { ok: false, error: 'Esa identificación ya pertenece a otro estudiante.' };
+    changes.identificacion = String(changes.identificacion).trim();
+  }
+  if (changes.email) {
+    const emailLower = changes.email.toLowerCase().trim();
+    const dup = students.find(s => s.email === emailLower && s.id !== id);
+    if (dup) return { ok: false, error: 'Ese email ya está en uso.' };
+    changes.email = emailLower;
+  }
+
+  students[idx] = { ...students[idx], ...changes, updatedAt: new Date().toISOString() };
+  saveStudents(students);
+  return { ok: true, student: students[idx] };
+}
+
+export function deleteStudent(id) {
+  const students = getStudents();
+  const filtered = students.filter(s => s.id !== id);
+  if (filtered.length === students.length) return { ok: false, error: 'Estudiante no encontrado.' };
+  saveStudents(filtered);
+  return { ok: true };
 }
 
 // Exportar KEYS por si otros módulos necesitan acceder a exams / results

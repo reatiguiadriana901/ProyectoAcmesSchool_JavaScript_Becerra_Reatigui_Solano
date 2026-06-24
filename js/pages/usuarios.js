@@ -17,7 +17,7 @@ import {
 // ── Proteger ruta: si no está autenticado, redirige ──
 requireAuth();
 
-// ── Exponer funciones al HTML (onclick en la tabla) ──
+// ── Exponer funciones al HTML (onclick en la t abla) ──
 // Como usamos módulos ES6, las funciones no están en window por defecto,
 // así que las asignamos manualmente para los botones generados dinámicamente.
 window.editUser      = (id)         => openEditModal(id);
