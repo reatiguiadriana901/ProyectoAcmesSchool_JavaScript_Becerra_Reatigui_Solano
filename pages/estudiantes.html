@@ -35,10 +35,10 @@
   <main class="main-content">
     <div class="page-header">
       <div>
-        <h1>Gestión de usuarios</h1>
-        <p class="page-subtitle">Administra las cuentas con acceso a la plataforma</p>
+        <h1>Gestión de Estudiantes</h1>
+        <p class="page-subtitle">Administra los estudiantes con acceso a los examenes</p>
       </div>
-      <button class="btn btn-primary" id="btnNuevoUsuario">+ Nuevo usuario</button>
+      <button class="btn btn-primary" id="btnNuevoUsuario">+ Nuevo Estudiante</button>
     </div>
 
     <!-- TABLA -->
@@ -54,9 +54,8 @@
               <th>ID</th>
               <th>Nombre completo</th>
               <th>Email</th>
-              <th>Teléfono</th>
-              <th>Cargo</th>
-              <th>Acciones</th>
+              <th>Genero(opcional)</th>
+              <th>Fecha de nacimiento </th>
             </tr>
           </thead>
           <tbody id="tbodyUsuarios">
@@ -88,11 +87,11 @@
             <span class="field-error" id="errIdNum"></span>
           </div>
           <div class="form-group">
-            <label for="userCargo">Cargo *</label>
-            <select id="userCargo" required>
+            <label for="userCargo">Sexo (Opcional ) </label>
+            <select id="userCargo">
               <option value="">Seleccionar…</option>
-              <option value="administrativo">Administrativo</option>
-              <option value="docente">Docente</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
             </select>
             <span class="field-error" id="errCargo"></span>
           </div>
@@ -104,25 +103,17 @@
           <span class="field-error" id="errName"></span>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="userEmail">Email *</label>
-            <input type="email" id="userEmail" placeholder="usuario@acme.edu.co" required />
-            <span class="field-error" id="errEmail"></span>
-          </div>
-          <div class="form-group">
-            <label for="userPhone">Teléfono</label>
-            <input type="tel" id="userPhone" placeholder="300 000 0000" />
-          </div>
+        
+        <div class="form-group">
+          <label for="userEmail">Email *</label>
+          <input type="email" id="userEmail" placeholder="usuario@acme.edu.co" required />
+          <span class="field-error" id="errEmail"></span>
         </div>
+        
 
         <div class="form-group">
-          <label for="userPassword">Contraseña *</label>
-          <div class="input-password">
-            <input type="password" id="userPassword" placeholder="Mínimo 6 caracteres" autocomplete="new-password" required />
-            <button type="button" class="toggle-pass" id="togglePassModal">👁</button>
-          </div>
-          <span class="field-error" id="errPassword"></span>
+          <label for="userPassword">Fecha De Nacimiento *</label>
+            <input type="date" id="userPassword"  required />
         </div>
 
         <div class="modal-actions">
@@ -138,7 +129,7 @@
 
   <script type="module" src="../js/utils/storage.js"></script>
   <script type="module" src="../js/modules/auth.js"></script>
-  <script type="module" src="../js/modules/usuarios.js"></script>
-  <script type="module" src="../js/pages/usuarios.js"></script>
+  <script type="module" src="../js/modules/estudiantes.js"></script>
+  <script type="module" src="../js/pages/estudiantes.js"></script>
 </body>
 </html>

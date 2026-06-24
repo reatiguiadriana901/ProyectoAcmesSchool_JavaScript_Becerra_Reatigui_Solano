@@ -45,12 +45,12 @@ export function renderUsersTable(filter = '') {
 
   if (empty) empty.style.display = 'none';
 
-  tbody.innerHTML = users.map(u => `
+  tbodyy.innerHTML = users.map(u => `
     <tr>
       <td>${escapeHtml(u.idNumber)}</td>
       <td>${escapeHtml(u.name)}</td>
       <td>${escapeHtml(u.email)}</td>
-      <td>${escapeHtml(u.phone || '—')}</td>
+      <td>${escapeHtml(u.genero || '—')}</td>
       <td><span class="badge badge-${u.role}">${capitalize(u.role)}</span></td>
       <td>
         <div class="action-btns">
@@ -111,7 +111,6 @@ export function handleFormSubmit(e) {
   const idNumber = document.getElementById('userIdNum').value.trim();
   const name     = document.getElementById('userName').value.trim();
   const email    = document.getElementById('userEmail').value.trim();
-//PONER CODIGO PHONE
   const role     = document.getElementById('userCargo').value;
   const password = document.getElementById('userPassword').value;
 
